@@ -13,7 +13,7 @@ const showForm = (event) => {
                 <div class="form-group mb-2">
                 <div class="form-group mx-sm-3 mb-2">
                 <label for="inord2" class="sr-only">text</label>
-                <input type="text" id ="studentName"class="form-control" placeholder="Harry Potter">
+                <input type="text" id ="studentName"class="form-control" placeholder="Full Name">
                 </div>
                 <button type="submit" id="student" class="btn btn-primary mb-2">Sort</button>
                 </form>
@@ -48,12 +48,13 @@ const buildStudentObj = () => {
   studentInfo.student = document.querySelector('#studentName').value;
   studentInfo.studentID = 'id' + (new Date()).getTime();
   cardArr.push(studentInfo);
-  buildHouseCard();
+  buildHouseCard(cardArr);
+  document.getElementById("studentName").value='';
 }
 
 let cardArr = [];
 
-const buildHouseCard = () => {
+const buildHouseCard = (obj) => {
   let domString = '';
   for(let i = 0; i < cardArr.length; i++) {
     
@@ -66,29 +67,31 @@ const buildHouseCard = () => {
                     </div>
                   `
     } else {
-              domString += `<div class="card  ${cardArr[i].house}" style="width: 18rem;" id="${cardArr[i].studentID}">
+              domString += `<div class="card  ${obj[i].house}" style="width: 18rem;" id="${obj[i].studentID}">
                             <div class="card-body">
-                            <h5 class="card-title">${cardArr[i].student}</h5>
-                            <p class="card-text">${cardArr[i].house}</p>
-                            <a href="#" class="btn btn-light expel" id="${cardArr[i].studentID}">Expel</a>
+                            <h5 class="card-title">${obj[i].student}</h5>
+                            <p class="card-text">${obj[i].house}</p>
+                            <button type="submit" id="${obj[i].studentID}" class="btn btn-primary mb-2 expel">Expel</button>
                             </div>
                             </div>
                           `
-   }
-}
+    }
+  }
   prinToDom('#cardContainer', domString)
-  document.querySelector('.expel').addEventListener('click', expelStudent)
-  
+  const buttons = document.querySelectorAll('.expel');
+  for(let i = 0; i < buttons.length; i++)buttons[i].addEventListener('click', expelStudent);
 }
 
 const expelStudent = (event) => {
+let tempCardArr = cardArr;
+
 for(let i = 0; i < cardArr.length; i++) {
   if (event.target.id === cardArr[i].studentID) {
-    document.querySelector('.card').style.display = 'none';
-    cardArr.splice(i, 1);
+    tempCardArr.splice(i,1);
     }
   }
-  buildHouseCard()
+  console.log(tempCardArr);
+  buildHouseCard(tempCardArr);
 }
 
 const clickEvents = () => {
