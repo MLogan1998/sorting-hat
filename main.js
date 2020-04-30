@@ -44,21 +44,30 @@ const whichHouseAmI = () => {
 }
 
 const buildStudentObj = () => {
-  let cardArr = [];
-  cardArr.house = whichHouseAmI();
-  cardArr.student = document.querySelector('#studentName').value;
-  // console.log(cardArr)
-  let domString = '';
-  domString += `<div class="card" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">${cardArr.student}</h5>
-                <p class="card-text">${cardArr.house}</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-              `
-  prinToDom('#cardContainer', domString)
+  let studentInfo = [];
+  studentInfo.house = whichHouseAmI();
+  studentInfo.student = document.querySelector('#studentName').value;
+  cardArr.push(studentInfo);
+  buildHouseCard();
 }
+
+let cardArr = [];
+
+const buildHouseCard = () => {
+  let domString = '';
+  for(let i = 0; i < cardArr.length; i++) {
+    domString += `<div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                  <h5 class="card-title">${cardArr[i].student}</h5>
+                  <p class="card-text">${cardArr[i].house}</p>
+                  <a href="#" class="btn btn-primary">Expel</a>
+                  </div>
+                  </div>
+                `
+   }
+   prinToDom('#cardContainer', domString)
+}
+
 
 const clickEvents = () => {
   document.querySelector('#sort').addEventListener('click', showForm);
@@ -70,3 +79,4 @@ const init = () => {
 }
 
 init()
+console.log(cardArr);
