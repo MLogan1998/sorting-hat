@@ -66,11 +66,11 @@ const buildHouseCard = () => {
                     </div>
                   `
     } else {
-              domString += `<div class="card" style="width: 18rem;" id="${cardArr[i].studentID}">
+              domString += `<div class="card  ${cardArr[i].house}" style="width: 18rem;" id="${cardArr[i].studentID}">
                             <div class="card-body">
                             <h5 class="card-title">${cardArr[i].student}</h5>
                             <p class="card-text">${cardArr[i].house}</p>
-                            <a href="#" class="btn btn-primary expel" id="${cardArr[i].studentID}">Expel</a>
+                            <a href="#" class="btn btn-light expel" id="${cardArr[i].studentID}">Expel</a>
                             </div>
                             </div>
                           `
