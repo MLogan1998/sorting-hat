@@ -8,13 +8,12 @@ const prinToDom = (selector, textToPrint) => {
 const showForm = (event) => {
   let domString = '';
 
-  domString += `<form class="form-inline">
+  domString += `<h3>Student Name:</h3>
+                <form class="form-inline">
                 <div class="form-group mb-2">
-                <h3>Student</h3>
-                </div>
                 <div class="form-group mx-sm-3 mb-2">
                 <label for="inord2" class="sr-only">text</label>
-                <input type="text" id ="studentName"class="form-control" placeholder="Matt Logan">
+                <input type="text" id ="studentName"class="form-control" placeholder="Harry Potter">
                 </div>
                 <button type="submit" id="student" class="btn btn-primary mb-2">Sort</button>
                 </form>
