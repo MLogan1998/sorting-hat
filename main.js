@@ -32,7 +32,7 @@ const whichHouseAmI = () => {
       return ("Gryffindor");
       break;
     case 2: 
-      return ('Hufflepuff,');
+      return ('Hufflepuff');
       break;
     case 3:
       return ('Slytherin');
@@ -49,8 +49,15 @@ const buildStudentObj = () => {
   cardArr.student = document.querySelector('#studentName').value;
   // console.log(cardArr)
   let domString = '';
-  domstring += ``
-
+  domString += `<div class="card" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">${cardArr.student}</h5>
+                <p class="card-text">${cardArr.house}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+                </div>
+              `
+  prinToDom('#cardContainer', domString)
 }
 
 const clickEvents = () => {
