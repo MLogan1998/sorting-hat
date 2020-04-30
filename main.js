@@ -46,6 +46,7 @@ const buildStudentObj = () => {
   let studentInfo = [];
   studentInfo.house = whichHouseAmI();
   studentInfo.student = document.querySelector('#studentName').value;
+  studentInfo.studentID = 'id' + (new Date()).getTime();
   cardArr.push(studentInfo);
   buildHouseCard();
 }
@@ -65,22 +66,33 @@ const buildHouseCard = () => {
                     </div>
                   `
     } else {
-              domString += `<div class="card" style="width: 18rem;">
+              domString += `<div class="card" style="width: 18rem;" id="${cardArr[i].studentID}">
                             <div class="card-body">
                             <h5 class="card-title">${cardArr[i].student}</h5>
                             <p class="card-text">${cardArr[i].house}</p>
-                            <a href="#" class="btn btn-primary">Expel</a>
+                            <a href="#" class="btn btn-primary expel" id="${cardArr[i].studentID}">Expel</a>
                             </div>
                             </div>
                           `
    }
 }
   prinToDom('#cardContainer', domString)
+  document.querySelector('.expel').addEventListener('click', expelStudent)
+  
+}
+
+const expelStudent = (event) => {
+for(let i = 0; i < cardArr.length; i++) {
+  if (event.target.id === cardArr[i].studentID) {
+    document.querySelector('.card').style.display = 'none';
+    cardArr.splice(i, 1);
+    }
+  }
+  buildHouseCard()
 }
 
 const clickEvents = () => {
   document.querySelector('#sort').addEventListener('click', showForm);
- 
 }
 
 const init = () => {
