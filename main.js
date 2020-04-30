@@ -56,18 +56,28 @@ let cardArr = [];
 const buildHouseCard = () => {
   let domString = '';
   for(let i = 0; i < cardArr.length; i++) {
-    domString += `<div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                  <h5 class="card-title">${cardArr[i].student}</h5>
-                  <p class="card-text">${cardArr[i].house}</p>
-                  <a href="#" class="btn btn-primary">Expel</a>
-                  </div>
-                  </div>
-                `
+    
+    if(cardArr[i].student == false) {
+      domString += `<div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">Enter Your Name</h5>
+                    <p class="card-text">Cant assign a house without a name!</p>
+                    </div>
+                    </div>
+                  `
+    } else {
+              domString += `<div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                            <h5 class="card-title">${cardArr[i].student}</h5>
+                            <p class="card-text">${cardArr[i].house}</p>
+                            <a href="#" class="btn btn-primary">Expel</a>
+                            </div>
+                            </div>
+                          `
    }
-   prinToDom('#cardContainer', domString)
 }
-
+  prinToDom('#cardContainer', domString)
+}
 
 const clickEvents = () => {
   document.querySelector('#sort').addEventListener('click', showForm);
