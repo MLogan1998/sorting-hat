@@ -1,5 +1,5 @@
 body {
-  background-color: dodgerblue;
+  background-color: #b9b9b9;
   text-align: center;
 }
 
@@ -31,8 +31,57 @@ form {
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 
 .card {
   margin: 5px;
+}
+
+.Ravenclaw {
+  background-color: #103E70;
+  color: #b3754e;
+  border: 2px solid #b3754e;
+}
+
+.Ravenclaw .expel{
+  color: #103E70;
+  background-color: #b3754e;
+  border: 2px solid #b3754e;
+}
+
+.Slytherin {
+  background-color: #268e2f;
+  color: white;
+  border: 2px solid white;
+}
+
+.Slytherin .expel {
+  color: #268e2f;
+  background-color: white;
+  border: 2px solid white;
+}
+
+.Gryffindor {
+  background-color: #6a1019;
+  color: #b36a26;
+  border: 2px solid #b36a26;
+}
+
+.Gryffindor .expel{
+  color: #6a1019;
+  background-color: #b36a26;
+  border: 2px solid #b36a26;
+}
+
+.Hufflepuff {
+  background-color: #d9d037;
+  color: #535169;
+  border: 2px solid #535169;
+}
+
+.Hufflepuff .expel {
+  background-color: #535169;
+  color: #d9d037;
+  border: 1px solid #535169;
 }
