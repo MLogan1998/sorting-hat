@@ -9,7 +9,7 @@ const showForm = (event) => {
   let domString = '';
 
   domString += `<h3>Student Name:</h3>
-                <form class="form-inline">
+                <form class="form-inline" action="javascript:void(0);" >
                 <div class="form-group mb-2">
                 <div class="form-group mx-sm-3 mb-2">
                 <label for="inord2" class="sr-only">text</label>
@@ -62,12 +62,13 @@ const buildHouseCard = (obj) => {
       domString += `<div class="card" style="width: 18rem;">
                     <div class="card-body">
                     <h5 class="card-title">Enter Your Name</h5>
-                    <p class="card-text">Cant assign a house without a name!</p>
+                    <p class="card-text">Can't assign a house without a name!</p>
+                    <button type="submit" id="${obj[i].studentID}" class="btn btn-primary mb-2 expel">Let Me Try Again</button>
                     </div>
                     </div>
                   `
     } else {
-              domString += `<div class="card  ${obj[i].house}" style="width: 18rem;" id="${obj[i].studentID}">
+              domString += `<div class="card  ${obj[i].house}" style="width: 18rem;">
                             <div class="card-body">
                             <h5 class="card-title">${obj[i].student}</h5>
                             <p class="card-text">${obj[i].house}</p>
@@ -87,10 +88,12 @@ let tempCardArr = cardArr;
 
 for(let i = 0; i < cardArr.length; i++) {
   if (event.target.id === cardArr[i].studentID) {
+    // console.log('Student ID', cardArr[i].studentID);
+    // console.log('Event target ID  +', event.target.id);
     tempCardArr.splice(i,1);
     }
   }
-  console.log(tempCardArr);
+  // console.log(tempCardArr);
   buildHouseCard(tempCardArr);
 }
 
@@ -103,4 +106,3 @@ const init = () => {
 }
 
 init()
-console.log(cardArr);
