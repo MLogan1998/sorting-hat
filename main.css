@@ -38,49 +38,91 @@ form {
 }
 
 .Ravenclaw {
-  background-color: #103E70;
-  color: #b3754e;
+  background-color: #103e70;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='53' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23b3754e' fill-opacity='0.93' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+   /* background by SVGBackgrounds.com */
   border: 2px solid #b3754e;
 }
 
 .Ravenclaw .expel{
   color: #103E70;
   background-color: #b3754e;
-  border: 2px solid #b3754e;
+  border: 2px solid #103E70;
+  font-weight: bold;
+}
+
+.Ravenclaw h5 {
+  color: #103E70;
+  border: 2px solid #103e70;
 }
 
 .Slytherin {
   background-color: #268e2f;
-  color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='53' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23ffffff' fill-opacity='0.61' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+   /* background by SVGBackgrounds.com */
   border: 2px solid white;
 }
 
 .Slytherin .expel {
   color: #268e2f;
   background-color: white;
-  border: 2px solid white;
+  border: 2px solid #268e2f;
+  font-weight: bold;
+}
+
+.Slytherin h5 {
+  color: #268e2f;
+  border: 2px solid #268e2f;
 }
 
 .Gryffindor {
   background-color: #6a1019;
-  color: #b36a26;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='53' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23b36a26' fill-opacity='0.46' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+   /* background by SVGBackgrounds.com */
   border: 2px solid #b36a26;
 }
 
 .Gryffindor .expel{
-  color: #6a1019;
   background-color: #b36a26;
-  border: 2px solid #b36a26;
+  border: 2px solid #6a1019;
+  font-weight: bold;
+  color: #6a1019;
+}
+
+.Gryffindor h5 {
+  color: #6a1019;
+  border: 2px solid #6a1019;
 }
 
 .Hufflepuff {
   background-color: #d9d037;
-  color: #535169;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='53' height='53' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23535169' fill-opacity='0.88' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+  /* background by SVGBackgrounds.com */
   border: 2px solid #535169;
 }
 
 .Hufflepuff .expel {
-  background-color: #535169;
-  color: #d9d037;
-  border: 1px solid #535169;
+  background-color: #d9d037;
+  color: #535169;
+  border: 2px solid #535169;
+  font-weight: bold;
+}
+
+.Hufflepuff h5 {
+  color: #535169;
+  border: 2px solid #535169;
+}
+
+.card h5 {
+  background: rgba(255,255,255, 0.8);
+  border-radius: 4px;
+  margin: 0;
+  padding: 4px;
+  display: inline;
+}
+
+.card p {
+  margin: 15px 0px;
+  font-weight: bolder;
+  color: white;
 }
