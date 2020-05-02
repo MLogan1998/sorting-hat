@@ -43,7 +43,7 @@ const whichHouseAmI = () => {
 }
 
 const buildStudentObj = () => {
-  let studentInfo = [];
+  let studentInfo = {};
   studentInfo.house = whichHouseAmI();
   studentInfo.student = document.querySelector('#studentName').value;
   studentInfo.studentID = 'id' + (new Date()).getTime();
@@ -71,7 +71,7 @@ const buildHouseCard = (obj) => {
               domString += `<div class="card  ${obj[i].house}" style="width: 18rem;">
                             <div class="card-body">
                             <h5 class="card-title">${obj[i].student}</h5>
-                            <p class="card-text">${obj[i].house}</p>
+                            <p class="cardp card-text">${obj[i].house}</p>
                             <button type="submit" id="${obj[i].studentID}" class="btn btn-primary mb-2 expel">Expel</button>
                             </div>
                             </div>
