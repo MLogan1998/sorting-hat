@@ -46,6 +46,7 @@ const buildStudentObj = () => {
   let studentInfo = {};
   studentInfo.house = whichHouseAmI();
   studentInfo.student = document.querySelector('#studentName').value;
+  if(studentInfo.student == false){alert('Enter Your Name! Cant Assign House Without Name!');return};
   studentInfo.studentID = 'id' + (new Date()).getTime();
   cardArr.push(studentInfo);
   buildHouseCard(cardArr);
@@ -58,16 +59,6 @@ const buildHouseCard = (obj) => {
   let domString = '';
   for(let i = 0; i < cardArr.length; i++) {
     
-    if(cardArr[i].student == false) {
-      domString += `<div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                    <h5 class="card-title">Enter Your Name</h5>
-                    <p class="card-text">Can't assign a house without a name!</p>
-                    <button type="submit" id="${obj[i].studentID}" class="btn btn-primary mb-2 expel">Let Me Try Again</button>
-                    </div>
-                    </div>
-                  `
-    } else {
               domString += `<div class="card  ${obj[i].house}" style="width: 18rem;">
                             <div class="card-body">
                             <h5 class="card-title">${obj[i].student}</h5>
@@ -77,7 +68,6 @@ const buildHouseCard = (obj) => {
                             </div>
                           `
     }
-  }
   prinToDom('#cardContainer', domString)
   const buttons = document.querySelectorAll('.expel');
   for(let i = 0; i < buttons.length; i++)buttons[i].addEventListener('click', expelStudent);
@@ -90,7 +80,7 @@ const buildEvilEmpire = () => {
   let domString = '';
 
   for (let i = 0; i < voldemortsArmy.length; i++) {
-    domString += `<div class="card" style="width: 18rem;">
+    domString += `<div class="card evilArmy" style="width: 18rem;">
                   <div class="card-body">
                   <h5 class="card-title">${voldemortsArmy[i].student}</h5>
                   <p class="card-text">Voldermort's Army</p>
