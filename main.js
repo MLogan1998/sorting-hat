@@ -83,6 +83,25 @@ const buildHouseCard = (obj) => {
   for(let i = 0; i < buttons.length; i++)buttons[i].addEventListener('click', expelStudent);
 }
 
+
+let voldemortsArmy = [];
+
+const buildEvilEmpire = () => {
+  let domString = '';
+
+  for (let i = 0; i < voldemortsArmy.length; i++) {
+    domString += `<div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                  <h5 class="card-title">${voldemortsArmy[i].student}</h5>
+                  <p class="card-text">Voldermort's Army</p>
+                  </div>
+                  </div>
+                `
+  }
+  prinToDom('#vArmy', domString);
+}
+
+
 const expelStudent = (event) => {
 let tempCardArr = cardArr;
 
@@ -90,11 +109,15 @@ for(let i = 0; i < cardArr.length; i++) {
   if (event.target.id === cardArr[i].studentID) {
     // console.log('Student ID', cardArr[i].studentID);
     // console.log('Event target ID  +', event.target.id);
+    voldemortsArmy.push(cardArr[i]);
     tempCardArr.splice(i,1);
     }
   }
-  // console.log(tempCardArr);
+  // console.log('harrys army ',tempCardArr);
+  // console.log('voldemorts army ',voldemortsArmy);
   buildHouseCard(tempCardArr);
+  buildEvilEmpire();
+  console.log('cardArr ', cardArr);
 }
 
 const clickEvents = () => {
