@@ -15,7 +15,7 @@ const showForm = (event) => {
                 <label for="inord2" class="sr-only">text</label>
                 <input type="text" id ="studentName"class="form-control" placeholder="Full Name">
                 </div>
-                <button type="submit" id="student" class="btn btn-primary mb-2">Sort</button>
+                <button type="submit" id="student" class="btn btn-dark mb-2">Sort</button>
                 </form>
                `
   prinToDom('#formContainer', domString)
@@ -63,7 +63,7 @@ const buildHouseCard = (obj) => {
                             <div class="card-body">
                             <h5 class="card-title">${obj[i].student}</h5>
                             <p class="cardp card-text">${obj[i].house}</p>
-                            <button type="submit" id="${obj[i].studentID}" class="btn btn-primary mb-2 expel">Expel</button>
+                            <button type="submit" id="${obj[i].studentID}" class="btn btn-dark mb-2 expel">Expel</button>
                             </div>
                             </div>
                           `
