@@ -83,7 +83,7 @@ const buildEvilEmpire = () => {
     domString += `<div class="card evilArmy" style="width: 18rem;">
                   <div class="card-body">
                   <h5 class="card-title">${voldemortsArmy[i].student}</h5>
-                  <p class="card-text">Voldermort's Army</p>
+                  <p class="card-text">Voldemort's Army</p>
                   </div>
                   </div>
                 `
