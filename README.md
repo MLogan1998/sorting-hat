@@ -1,11 +1,21 @@
-# Sorting Hat
+# NSS E12 Exercise - Sorting Hat
 
-E12 Exercise : Due 5/5/2020
+## Description:
+The objective of the exercise was to create a Sorting Hat using HTML, CSS, and JavaScript. The sorting hat takes a Student Name input and assigns the student to a random Harry Potter house. The outputed card has an 'Expel' button that expels the student from their assigned house, and places them in 'Voldermort's Army.' The projects design is responsive and looks great on any size screen. 
 
-Technical Requirements:
+## Screenshots:
+##### Main View / Student Input
+![Student Input](screenshots/readme1.jpg)
+##### Student Sorted to Random House
+![Sort View](screenshots/readme2.jpg)
+##### Student Expelled to Voldemort's Army
+![Expel View](screenshots/readme3.jpg)
+##### Responsive Design
+![Responsive View](screenshots/readme4.jpg)
 
-You must use Boostrap 4 to style your page components.
-You should apply responsive design to your page (aka your app should be designed to work on small screens)
-Your JS file should be comprised of functions, no actions should happen in your code outside of a function
-Your HTML and JS should all have proper indentation
-Helpful Form: An error message shows if a user tries to sort a student without filling out the form
+
+## How To Run:
+>1. Clone down this repo.
+>1. Install [http-server](https://www.npmjs.com/package/http-server).
+>1. Navigate to folder in command line and type `http-server -p 8080`.
+>1. Go to `http://localhost:8080` in your browser.
