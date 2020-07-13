@@ -15,4 +15,7 @@ The objective of the exercise was to create a Sorting Hat using HTML, CSS, and J
 
 
 ## How To Run:
-> Project is deployed at [https://logandevelopment.io/projects/sortinghat.html](https://logandevelopment.io/projects/sortinghat.html)
+>1. Clone down this repo.
+>1. Install [http-server](https://www.npmjs.com/package/http-server).
+>1. Navigate to folder in command line and type `http-server -p 8080`.
+>1. Go to `http://localhost:8080` in your browser.
